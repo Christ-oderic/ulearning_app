@@ -38,21 +38,21 @@ class _WelcomeState extends State<Welcome> {
                         "Next",
                         "First See Learning",
                         "Forget about a for of paper all knowledge in one learning!",
-                        "/assets/images/reading.png"),
+                        "assets/images/reading.png"),
                     _page(
                         2,
                         context,
                         "Next",
                         "Connect With Everyone",
                         "Always keep in touch with your tutor & friend. Let's get connected!",
-                        "image path"),
+                        "assets/images/boy.png"),
                     _page(
                         3,
                         context,
                         "Get Started",
                         "Always Fascinated Learning",
                         "Anywhere, anytime. The time is at your discretion so study whenever you want!",
-                        "image path"),
+                        "assets/images/man.png"),
                   ],
                 ),
                 Positioned(
@@ -85,7 +85,7 @@ class _WelcomeState extends State<Welcome> {
         SizedBox(
           width: 345.w,
           height: 345.w,
-          child: const Text("Image one"),
+          child: Image.asset(imagePath, fit: BoxFit.cover),
         ),
         Text(
           title,
