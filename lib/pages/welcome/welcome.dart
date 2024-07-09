@@ -87,14 +87,12 @@ class _WelcomeState extends State<Welcome> {
           height: 345.w,
           child: const Text("Image one"),
         ),
-        Container(
-          child: Text(
-            title,
-            style: TextStyle(
-                color: Colors.black,
-                fontSize: 24.sp,
-                fontWeight: FontWeight.normal),
-          ),
+        Text(
+          title,
+          style: TextStyle(
+              color: Colors.black,
+              fontSize: 24.sp,
+              fontWeight: FontWeight.normal),
         ),
         Container(
           width: 375.w,
@@ -119,7 +117,7 @@ class _WelcomeState extends State<Welcome> {
                     color: Colors.grey.withOpacity(0.1),
                     spreadRadius: 1,
                     blurRadius: 2,
-                    offset: Offset(0, 1))
+                    offset: const Offset(0, 1))
               ]),
           child: Center(
             child: Text(
