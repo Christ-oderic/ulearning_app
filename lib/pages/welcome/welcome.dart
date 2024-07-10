@@ -6,8 +6,6 @@ import 'package:ulearning_app/pages/welcome/bloc/welcome_blocs.dart';
 import 'package:ulearning_app/pages/welcome/bloc/welcome_events.dart';
 import 'package:ulearning_app/pages/welcome/bloc/welcome_states.dart';
 
-import '../../main.dart';
-
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
 
@@ -119,8 +117,10 @@ class _WelcomeState extends State<Welcome> {
                   curve: Curves.easeIn);
             } else {
               //jump to a next page
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const MyHomePage()));
+              // Navigator.of(context).push(
+              //     MaterialPageRoute(builder: (context) => const MyHomePage()));
+              Navigator.of(context)
+                  .pushNamedAndRemoveUntil("myHomePage", (route) => false);
             }
           },
           child: Container(

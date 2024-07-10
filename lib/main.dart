@@ -26,10 +26,12 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: ScreenUtilInit(
-        builder: (context, child) => const MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: Welcome(),
-        ),
+        builder: (context, child) => MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: const Welcome(),
+            routes: {
+              "myHomePage": (context) => const MyHomePage(),
+            }),
       ),
     );
   }
@@ -43,7 +45,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text("Flutter Demo HOme Page"),
+        title: const Text("Flutter Demo HOme Page"),
       ),
       body: Center(
         child: BlocBuilder<AppBloc, AppStates>(
@@ -67,11 +69,13 @@ class MyHomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           FloatingActionButton(
+            heroTag: "heroTag1",
             onPressed: () => BlocProvider.of<AppBloc>(context).add(Increment()),
             tooltip: 'Increment',
             child: const Icon(Icons.add),
           ),
           FloatingActionButton(
+            heroTag: "heroTag2",
             onPressed: () => BlocProvider.of<AppBloc>(context).add(Decrement()),
             tooltip: 'Decrement',
             child: const Icon(Icons.remove),
