@@ -18,14 +18,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-        create: (context) => WelcomeBlocs(),
-        child: ScreenUtilInit(
-          builder: (context, child) => const MaterialApp(
-            debugShowCheckedModeBanner: false,
-            home: Welcome(),
-          ),
-        ));
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => WelcomeBlocs()),
+        BlocProvider(
+          create: (context) => AppBloc(),
+        ),
+      ],
+      child: ScreenUtilInit(
+        builder: (context, child) => const MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: Welcome(),
+        ),
+      ),
+    );
   }
 }
 
